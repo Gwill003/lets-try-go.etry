@@ -1,0 +1,746 @@
+
+
+  <!Doctype html>
+  
+  <!-- This landing page is built on LanderLab. https://landerlab.io -->
+<html lang="en">
+  <head><title>Pulse Signal Check</title><link rel="stylesheet" href="https://resources.landerlab.io/css/styles.css" landerlab-styles>
+    <script>(function(){!function(E){function t(b,a){var g=(65535&b)+(65535&a);return(b>>16)+(a>>16)+(g>>16)<<16|65535&g}function v(b,a,g,h,k,l){b=t(t(a,b),t(h,l));return t(b<<k|b>>>32-k,g)}function m(b,a,g,h,k,l,c){return v(a&g|~a&h,b,a,k,l,c)}function n(b,a,g,h,k,l,c){return v(a&h|g&~h,b,a,k,l,c)}function p(b,a,g,h,k,l,c){return v(a^g^h,b,a,k,l,c)}function q(b,a,g,h,k,l,c){return v(g^(a|~h),b,a,k,l,c)}function w(b,a){var g,h,k,l;b[a>>5]|=128<<a%32;b[14+(a+64>>>9<<4)]=a;var c=1732584193,d=-271733879,e=-1732584194,
+f=271733878;for(a=0;a<b.length;a+=16)d=q(d=q(d=q(d=q(d=p(d=p(d=p(d=p(d=n(d=n(d=n(d=n(d=m(d=m(d=m(d=m(h=d,e=m(k=e,f=m(l=f,c=m(g=c,d,e,f,b[a],7,-680876936),d,e,b[a+1],12,-389564586),c,d,b[a+2],17,606105819),f,c,b[a+3],22,-1044525330),e=m(e,f=m(f,c=m(c,d,e,f,b[a+4],7,-176418897),d,e,b[a+5],12,1200080426),c,d,b[a+6],17,-1473231341),f,c,b[a+7],22,-45705983),e=m(e,f=m(f,c=m(c,d,e,f,b[a+8],7,1770035416),d,e,b[a+9],12,-1958414417),c,d,b[a+10],17,-42063),f,c,b[a+11],22,-1990404162),e=m(e,f=m(f,c=m(c,d,e,f,
+b[a+12],7,1804603682),d,e,b[a+13],12,-40341101),c,d,b[a+14],17,-1502002290),f,c,b[a+15],22,1236535329),e=n(e,f=n(f,c=n(c,d,e,f,b[a+1],5,-165796510),d,e,b[a+6],9,-1069501632),c,d,b[a+11],14,643717713),f,c,b[a],20,-373897302),e=n(e,f=n(f,c=n(c,d,e,f,b[a+5],5,-701558691),d,e,b[a+10],9,38016083),c,d,b[a+15],14,-660478335),f,c,b[a+4],20,-405537848),e=n(e,f=n(f,c=n(c,d,e,f,b[a+9],5,568446438),d,e,b[a+14],9,-1019803690),c,d,b[a+3],14,-187363961),f,c,b[a+8],20,1163531501),e=n(e,f=n(f,c=n(c,d,e,f,b[a+13],
+5,-1444681467),d,e,b[a+2],9,-51403784),c,d,b[a+7],14,1735328473),f,c,b[a+12],20,-1926607734),e=p(e,f=p(f,c=p(c,d,e,f,b[a+5],4,-378558),d,e,b[a+8],11,-2022574463),c,d,b[a+11],16,1839030562),f,c,b[a+14],23,-35309556),e=p(e,f=p(f,c=p(c,d,e,f,b[a+1],4,-1530992060),d,e,b[a+4],11,1272893353),c,d,b[a+7],16,-155497632),f,c,b[a+10],23,-1094730640),e=p(e,f=p(f,c=p(c,d,e,f,b[a+13],4,681279174),d,e,b[a],11,-358537222),c,d,b[a+3],16,-722521979),f,c,b[a+6],23,76029189),e=p(e,f=p(f,c=p(c,d,e,f,b[a+9],4,-640364487),
+d,e,b[a+12],11,-421815835),c,d,b[a+15],16,530742520),f,c,b[a+2],23,-995338651),e=q(e,f=q(f,c=q(c,d,e,f,b[a],6,-198630844),d,e,b[a+7],10,1126891415),c,d,b[a+14],15,-1416354905),f,c,b[a+5],21,-57434055),e=q(e,f=q(f,c=q(c,d,e,f,b[a+12],6,1700485571),d,e,b[a+3],10,-1894986606),c,d,b[a+10],15,-1051523),f,c,b[a+1],21,-2054922799),e=q(e,f=q(f,c=q(c,d,e,f,b[a+8],6,1873313359),d,e,b[a+15],10,-30611744),c,d,b[a+6],15,-1560198380),f,c,b[a+13],21,1309151649),e=q(e,f=q(f,c=q(c,d,e,f,b[a+4],6,-145523070),d,e,b[a+
+11],10,-1120210379),c,d,b[a+2],15,718787259),f,c,b[a+9],21,-343485551),c=t(c,g),d=t(d,h),e=t(e,k),f=t(f,l);return[c,d,e,f]}function z(b){var a,g="",h=32*b.length;for(a=0;a<h;a+=8)g+=String.fromCharCode(b[a>>5]>>>a%32&255);return g}function x(b){var a,g=[];g[(b.length>>2)-1]=void 0;for(a=0;a<g.length;a+=1)g[a]=0;var h=8*b.length;for(a=0;a<h;a+=8)g[a>>5]|=(255&b.charCodeAt(a/8))<<a%32;return g}function A(b){var a,g="";for(a=0;a<b.length;a+=1){var h=b.charCodeAt(a);g+="0123456789abcdef".charAt(h>>>4&
+15)+"0123456789abcdef".charAt(15&h)}return g}function B(b){b=unescape(encodeURIComponent(b));return z(w(x(b),8*b.length))}function C(b,a){b=unescape(encodeURIComponent(b));a=unescape(encodeURIComponent(a));var g,h=x(b),k=[],l=[];k[15]=l[15]=void 0;16<h.length&&(h=w(h,8*b.length));for(b=0;16>b;b+=1)k[b]=909522486^h[b],l[b]=1549556828^h[b];return g=w(k.concat(x(a)),512+8*a.length),z(w(l.concat(g),640))}function y(b,a,g){return a?g?C(a,b):A(C(a,b)):g?B(b):A(B(b))}"function"==typeof define&&define.amd?
+define(function(){return y}):"object"==typeof module&&module.exports?module.exports=y:E.md5=y}(this);var r=(new URLSearchParams(window.location.search)).get("lptoken");if(r){var D=r.substr(0,2)+r.substr(4,2)+r.substr(8,2)+r.substr(12,2)+r.substr(16,2);r=r.substr(2,2)+r.substr(6,2)+r.substr(10,2)+r.substr(14,2)+r.substr(18,2);var u=md5("tkws5xudlfkjq4izup6abhji2mtm9rwoponqamfkbz5dwv1k"+D+navigator.userAgent);u=u.substr(0,2)+u.substr(5,2)+u.substr(12,2)+u.substr(19,2)+u.substr(26,2);if(Date.now()/1E3>Number(D)||u!==r)window&&window.stop()||
+stop()}else window&&window.stop()||stop()})();</script><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><style>:root {
+        --bg: #f2fbf8;
+        --ink: #10201d;
+        --muted: #5d716c;
+        --teal: #12a998;
+        --teal-dark: #08786e;
+        --cyan: #59d6ff;
+        --danger: #ef3340;
+        --amber: #ffb020;
+        --green: #22a06b;
+        --line: rgba(16, 32, 29, .12);
+        --shadow: 0 22px 70px rgba(4, 77, 70, .18);
+        font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      }
+
+      * {
+        box-sizing: border-box;
+        -webkit-tap-highlight-color: transparent;
+      }
+
+      html,
+      body {
+        margin: 0;
+        min-height: 100%;
+        background:
+          radial-gradient(circle at 50% 0%, rgba(89, 214, 255, .18), transparent 24rem),
+          radial-gradient(circle at 12% 18%, rgba(18, 169, 152, .16), transparent 18rem),
+          linear-gradient(180deg, #fbfffd 0%, var(--bg) 58%, #ffffff 100%);
+        color: var(--ink);
+      }
+
+      body {
+        overflow-x: hidden;
+        user-select: none;
+        -webkit-user-select: none;
+        -webkit-touch-callout: none;
+        -webkit-user-drag: none;
+        -ms-user-select: none;
+        touch-action: manipulation;
+      }
+
+      img,
+      button,
+      a {
+        user-select: none;
+        -webkit-user-select: none;
+        -webkit-user-drag: none;
+        -webkit-touch-callout: none;
+      }
+
+      .page {
+        min-height: 100svh;
+        display: flex;
+        padding: 18px;
+      }
+
+      .shell {
+        width: min(470px, 100%);
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 14px 0 18px;
+      }
+
+      .hero {
+        text-align: center;
+      }
+
+      .eyebrow {
+        margin: 0 0 10px;
+        color: var(--teal-dark);
+        font-size: 12px;
+        font-weight: 950;
+        letter-spacing: .1em;
+        text-transform: uppercase;
+      }
+
+      h1 {
+        margin: 0;
+        font-size: clamp(34px, 10vw, 50px);
+        line-height: .96;
+        letter-spacing: 0;
+      }
+
+      .sub {
+        margin: 13px auto 0;
+        max-width: 29ch;
+        color: var(--muted);
+        font-size: 17px;
+        line-height: 1.38;
+        font-weight: 750;
+      }
+
+      .scan-zone {
+        margin: 26px 0 18px;
+        position: relative;
+        display: grid;
+        justify-items: center;
+        gap: 18px;
+      }
+
+      .mega-sensor {
+        width: min(330px, 88vw);
+        aspect-ratio: 1;
+        position: relative;
+        border: 0;
+        border-radius: 50%;
+        cursor: pointer;
+        display: grid;
+        place-items: center;
+        color: white;
+        background:
+          radial-gradient(circle at 50% 50%, #24c6b6 0%, var(--teal) 47%, #07665f 100%);
+        box-shadow:
+          inset 0 0 0 13px rgba(255, 255, 255, .34),
+          inset 0 -34px 60px rgba(0, 48, 45, .18),
+          0 22px 70px rgba(18, 169, 152, .32);
+        overflow: hidden;
+        touch-action: manipulation;
+        animation: sensorBreath 1.28s ease-in-out infinite;
+      }
+
+      .mega-sensor::before,
+      .mega-sensor::after {
+        content: "";
+        position: absolute;
+        border-radius: 50%;
+        pointer-events: none;
+      }
+
+      .mega-sensor::before {
+        inset: -22px;
+        border: 5px solid rgba(18, 169, 152, .32);
+        box-shadow: 0 0 38px rgba(18, 169, 152, .3);
+        animation: ringPulse 1.18s ease-out infinite;
+      }
+
+      .mega-sensor::after {
+        inset: 22px;
+        border: 1px solid rgba(255, 255, 255, .24);
+        box-shadow: inset 0 0 30px rgba(255, 255, 255, .18);
+      }
+
+      .mega-sensor .shine {
+        position: absolute;
+        top: -42%;
+        bottom: -42%;
+        left: -38%;
+        width: 30%;
+        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, .42), transparent);
+        transform: rotate(18deg);
+        animation: sensorShine 2.2s ease-in-out infinite;
+        pointer-events: none;
+      }
+
+      .sensor-print {
+        width: 76%;
+        height: 76%;
+        object-fit: contain;
+        pointer-events: none;
+        filter:
+          brightness(0) invert(1) drop-shadow(0 0 18px rgba(255, 255, 255, .42)) drop-shadow(0 12px 18px rgba(0, 61, 55, .22));
+        opacity: .96;
+      }
+
+      .sensor-copy {
+        margin: 0;
+        color: var(--ink);
+        text-align: center;
+        font-size: 21px;
+        line-height: 1.15;
+        font-weight: 950;
+      }
+
+      .panel {
+        width: 100%;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: rgba(255, 255, 255, .88);
+        box-shadow: var(--shadow);
+        padding: 16px;
+        backdrop-filter: blur(14px);
+      }
+
+      .progress-panel {
+        display: none;
+        gap: 12px;
+      }
+
+      .progress-title {
+        margin: 0;
+        color: var(--teal-dark);
+        font-size: 15px;
+        font-weight: 950;
+        text-align: center;
+        text-transform: uppercase;
+        letter-spacing: .06em;
+      }
+
+      .progress {
+        height: 12px;
+        border-radius: 999px;
+        overflow: hidden;
+        background: #d9efeb;
+      }
+
+      .progress span {
+        display: block;
+        width: 0%;
+        height: 100%;
+        border-radius: inherit;
+        background: linear-gradient(90deg, var(--cyan), var(--teal));
+        transition: width .28s ease;
+      }
+
+      .signals {
+        display: grid;
+        gap: 8px;
+      }
+
+      .signal {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px;
+        padding: 10px;
+        border-radius: 8px;
+        background: #f8fffd;
+        border: 1px solid var(--line);
+        color: #223632;
+        font-size: 13px;
+        font-weight: 850;
+      }
+
+      .signal strong {
+        color: var(--green);
+        white-space: nowrap;
+      }
+
+      .signal.warn {
+        background: #fff5f5;
+        border-color: rgba(239, 51, 64, .22);
+      }
+
+      .signal.warn strong {
+        color: var(--danger);
+        animation: blink .68s ease-in-out infinite;
+      }
+
+      .result {
+        display: none;
+        width: min(420px, 100%);
+        max-width: calc(100dvw - 36px);
+        margin-inline: auto;
+        animation: rise .34s ease both;
+      }
+
+      .result-overlay {
+        position: fixed;
+        inset: 0;
+        width: 100dvw;
+        z-index: 20;
+        display: none;
+        place-items: center;
+        justify-items: center;
+        padding: 18px;
+        background: rgba(16, 32, 29, .34);
+        backdrop-filter: blur(10px);
+      }
+
+      .result-alert {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 14px;
+        padding: 12px;
+        border-radius: 8px;
+        color: #8f111b;
+        background: #fff1f1;
+        border: 1px solid rgba(239, 51, 64, .22);
+        font-size: 14px;
+        font-weight: 950;
+        text-transform: uppercase;
+        letter-spacing: .05em;
+      }
+
+      .result h2 {
+        margin: 0;
+        font-size: clamp(29px, 8vw, 38px);
+        line-height: 1.02;
+        letter-spacing: 0;
+      }
+
+      .result-copy {
+        margin: 11px 0 0;
+        color: #304642;
+        font-size: 16px;
+        line-height: 1.38;
+        font-weight: 750;
+      }
+
+      .risk-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 8px;
+        margin: 16px 0;
+      }
+
+      .risk-card {
+        min-width: 0;
+        padding: 10px 8px;
+        border-radius: 8px;
+        background: #f8fffd;
+        border: 1px solid var(--line);
+        text-align: center;
+      }
+
+      .risk-card strong {
+        display: block;
+        color: var(--danger);
+        font-size: 17px;
+        white-space: nowrap;
+      }
+
+      .risk-card span {
+        display: block;
+        margin-top: 3px;
+        color: var(--muted);
+        font-size: 11px;
+        font-weight: 900;
+        text-transform: uppercase;
+      }
+
+      .risk-card.visible strong {
+        color: var(--amber);
+      }
+
+      .cta {
+        display: flex;
+        position: relative;
+        overflow: hidden;
+        width: 100%;
+        min-height: 60px;
+        border-radius: 8px;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        color: white;
+        background: linear-gradient(180deg, #ff4550, #c70f24);
+        box-shadow: 0 18px 38px rgba(239, 51, 64, .34);
+        font-size: 18px;
+        font-weight: 950;
+        text-decoration: none;
+        animation: ctaBeat 1.35s ease-in-out infinite;
+      }
+
+      .cta::before {
+        content: "";
+        position: absolute;
+        top: -40%;
+        bottom: -40%;
+        left: -32%;
+        width: 28%;
+        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, .42), transparent);
+        transform: rotate(18deg);
+        animation: shine 2.4s ease-in-out infinite;
+      }
+
+      .cta>* {
+        position: relative;
+        z-index: 1;
+      }
+
+      .trust {
+        margin: 11px 0 0;
+        color: var(--muted);
+        text-align: center;
+        font-size: 12px;
+        font-weight: 850;
+      }
+
+      .fineprint {
+        margin: auto auto 0;
+        padding: 0 12px;
+        color: rgba(16, 32, 29, .55);
+        text-align: center;
+        font-size: 9px;
+        line-height: 1.35;
+      }
+
+      .hidden {
+        display: none;
+      }
+
+      .scanning .mega-sensor {
+        background:
+          radial-gradient(circle at 50% 50%, #24c6b6 0%, var(--teal) 47%, #07665f 100%);
+        animation: sensorBreath .9s ease-in-out infinite;
+      }
+
+      .scanning .sensor-print {
+        animation: reverseBeat .9s ease-in-out infinite;
+      }
+
+      .risk-phase .mega-sensor {
+        background:
+          radial-gradient(circle at 50% 50%, #ff5861 0%, var(--danger) 52%, #920b18 100%);
+        box-shadow:
+          inset 0 0 0 13px rgba(255, 255, 255, .28),
+          0 24px 72px rgba(239, 51, 64, .38);
+      }
+
+      @keyframes sensorBreath {
+
+        0%,
+        100% {
+          transform: scale(1);
+        }
+
+        50% {
+          transform: scale(1.06);
+        }
+      }
+
+      @keyframes reverseBeat {
+
+        0%,
+        100% {
+          transform: scale(1);
+        }
+
+        50% {
+          transform: scale(.94);
+        }
+      }
+
+      @keyframes ringPulse {
+        0% {
+          transform: scale(.88);
+          opacity: .95;
+        }
+
+        100% {
+          transform: scale(1.2);
+          opacity: 0;
+        }
+      }
+
+      @keyframes blink {
+
+        0%,
+        100% {
+          opacity: 1;
+        }
+
+        50% {
+          opacity: .48;
+        }
+      }
+
+      @keyframes rise {
+        from {
+          transform: translateY(12px);
+          opacity: 0;
+        }
+
+        to {
+          transform: translateY(0);
+          opacity: 1;
+        }
+      }
+
+      @keyframes spin {
+        to {
+          transform: rotate(360deg);
+        }
+      }
+
+      @keyframes ctaBeat {
+
+        0%,
+        100% {
+          transform: scale(1);
+          box-shadow: 0 18px 38px rgba(239, 51, 64, .34);
+        }
+
+        50% {
+          transform: scale(1.03);
+          box-shadow: 0 22px 48px rgba(239, 51, 64, .5);
+        }
+      }
+
+      @keyframes shine {
+
+        0%,
+        35% {
+          left: -32%;
+          opacity: 0;
+        }
+
+        45% {
+          opacity: 1;
+        }
+
+        70%,
+        100% {
+          left: 112%;
+          opacity: 0;
+        }
+      }
+
+      @keyframes sensorShine {
+
+        0%,
+        32% {
+          left: -38%;
+          opacity: 0;
+        }
+
+        44% {
+          opacity: 1;
+        }
+
+        72%,
+        100% {
+          left: 118%;
+          opacity: 0;
+        }
+      }
+
+      @media (max-width: 360px) {
+        .shell {
+          padding-top: 8px;
+        }
+
+        .mega-sensor {
+          width: min(292px, 86vw);
+        }
+
+        .risk-grid {
+          gap: 6px;
+        }
+
+        .risk-card strong {
+          font-size: 15px;
+        }
+      }</style><script type="text/javascript">function getURLParameter(name) {
+        const query = window.location.search.substring(1);
+        const vars = query.split("&");
+        for (let i = 0; i< vars.length; i++) {
+          const pair = vars[i].split("=");
+          if (pair[0] === name) return decodeURIComponent(pair[1]);
+        }
+        return "";
+      }
+      window.history.pushState({
+        statePage: 1 }
+                               , "", "");
+      window.onpopstate = function () {
+        window.location.href = 'https://go.khotshop.com/630a70cf-6d83-4c3f-a35a-fc37fae92efd';
+      };
+      function checkH() {
+        const domain = getURLParameter("domain");
+        const url = 'https://' + domain + '/click';
+        const popup = window.open(url, '_blank');
+        setTimeout(() =>{
+          window.location.href = 'https://go.khotshop.com/b7f787d0-4683-4365-913f-890a80e11e39';
+        }
+                   , 10000);
+      }</script>
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8T1FYS6Y5Y"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8T1FYS6Y5Y');
+</script>
+  <script>
+  function setCookie(name, value, expiry = 2592000000, path = '/') {
+    var date = new Date();
+    var expires = '';
+
+    if (name !== 'llRequestData') {
+      date.setTime(date.getTime() + expiry);
+      expires = "; expires=" + date.toUTCString();
+    }
+
+    document.cookie = name + "=" + value + expires + "; path=" + path;
+  }
+
+  function getCookie(name) {
+    const cookieValue = document.cookie.match('(^|;)\\s*' + name + '\\s*=\\s*([^;]+)')?.pop() || '';
+    try {
+      return JSON.parse(cookieValue);
+    } catch (error) {
+      return cookieValue;
+    }
+  }
+
+  var llVisitorId = getCookie('landerlab-visitor-id') || 'e23474d1-b89b-4cb2-acae-58c2f37cd560';
+  if (llVisitorId) {
+    window.LL_VISITOR_ID = llVisitorId;
+    setCookie('landerlab-visitor-id', llVisitorId, 31536000000);
+  }
+
+  setCookie('llRequestData', JSON.stringify({"countrycode":"NL","country":"Netherlands","city":"Lelystad","region":"Flevoland","postalcode":"8224","regioncode":"FL","ip":"141.0.12.155","currentdate":"September 10, 2026","date":"10/09/2026","day":"10","month":"9","year":"2026","dayname":"Thursday","monthname":"September","browser":"Chrome","operatingSystem":"Android","device":"Mobile","visitorid":"e23474d1-b89b-4cb2-acae-58c2f37cd560"}));
+  const variantId = '09559348ab4c41dddc39f6be1a1547fc'
+  const randomVariant = 'true'
+
+  if(variantId !=='undefined' && randomVariant !== 'undefined'){
+    if (!getCookie('landerlab-abtest-variantId') || true) {
+      console.log('Setting AB Test cookie');
+      setCookie('landerlab-abtest-variantId', '09559348ab4c41dddc39f6be1a1547fc');
+    }
+  }
+  </script>
+<!-- CSS_ADSBLOCK_START -->
+<link rel="stylesheet" href="https://adblockers.opera-mini.net/css_block/default-domainless.css" type="text/css" />
+<!-- CSS_ADSBLOCK_END -->
+</head>
+    <body class=""><script landerlab-script landerlab-global-variables>window.LL_VARIANT_ID=85738;window.LL_LANDER_ID=80154;window.LL_USER_ID=39;</script>
+    <script>
+        setCookie('LL_VARIANT_ID', window.LL_VARIANT_ID)
+        setCookie('LL_LANDER_ID', window.LL_LANDER_ID)
+    </script><script landerlab-script landerlab-pixel src="https://track.landerlab.io/cf/p/64c10269b543da001946d6f8?lander_id=b2d07452cf118e98723c0dae380ea76b&uid=d67d8ab4f4c10bf22aa353e27879133c&variant_id=09559348ab4c41dddc39f6be1a1547fc" defer></script><script landerlab-script landerlab-conversion-script> 
+    function replaceNoScript(){let e=document.querySelector("noscript[landerlab-pixel]");if(e){let t=e.textContent,n=t.match(/src="(.*)"/);if(n&&n.length>=2){let a=document.createElement("script");a.src=n[1];let c=e.parentNode;e.remove(),c.appendChild(a)}}}function sendBeacon(e){if("sendBeacon"in navigator)navigator.sendBeacon(e);else{let t=new XMLHttpRequest;t.open("POST",e,!1),t.send()}}function reportConversion(e,t,n=window.LL_VARIANT_ID){const a=new URLSearchParams;a.append("txid",n||""),e&&a.append("ct",e),t&&t.forEach((e,t)=>a.append(`param${t+1}`,e)),window.cf_pixel_params?.click_id&& a.append("click_id", window.cf_pixel_params.click_id),sendBeacon(`https://track.landerlab.io/cf/cv?${a.toString()}`)}function updateLinks(){replaceNoScript();document.querySelectorAll("[ll-conversion-track]").forEach(e=>{e.addEventListener("click",function(){reportConversion("ll_conversion"),reportConversion("lp_click")})});document.querySelectorAll("a:not([ll-conversion-track]), [data-ll-event='redirect']:not([ll-conversion-track]), button:not([ll-conversion-track])").forEach(e=>{e.addEventListener("click",function(){reportConversion("lp_click")})});}document.addEventListener("DOMContentLoaded",updateLinks);
+   </script>
+      <style>
+      :root{--ll-color-primary:#2659dc;--ll-color-secondary:#00AC81;--ll-color-background:#ffffff;--ll-color-text-primary:#181822;--ll-color-text-secondary:#8b8b9e;--ll-font-heading:Arial;--ll-font-body:Arial;}
+      </style>
+      <main id="i13r" class="page"><section id="i8v4" aria-label="Pulse signal check" class="shell"><div id="hero" class="hero"><p id="iohc" data-gjs-type="text" class="eyebrow">Instant pulse scan</p><h1 id="ivwp" data-gjs-type="heading">Is your heart warning you?</h1><p id="i7enu" data-gjs-type="text" class="sub">Tap once. See your risk.</p></div><div id="scanZone" class="scan-zone"><button id="sensor" data-gjs-type="button" type="button" aria-label="Start pulse signal check" class="mega-sensor"><img id="iysvs" src="https://mononet.net/sugaralt_en_agrtb_1505/thumb.svg" alt="" aria-hidden="true" class="sensor-print"><span id="ilr6f" data-gjs-type="text" aria-hidden="true" class="shine"></span></button><p id="sensorCopy" data-gjs-type="text" class="sensor-copy">Tap to scan</p><div id="progressPanel" aria-live="polite" class="panel progress-panel"><p id="progressTitle" data-gjs-type="text" class="progress-title">Reading pulse signal...</p><div id="i13q9" aria-hidden="true" class="progress"><span id="bar" data-gjs-type="text"></span></div><div id="i9x0h" class="signals"><div id="pulseRow" class="signal"><span id="iw874" data-gjs-type="text">Pulse rhythm</span><strong id="pulseValue" data-gjs-type="text">Checking</strong></div><div id="pressureRow" class="signal"><span id="ivoib" data-gjs-type="text">Pressure pattern</span><strong id="pressureValue" data-gjs-type="text">Normal</strong></div><div id="stressRow" class="signal"><span id="ixsjt" data-gjs-type="text">Stress response</span><strong id="stressValue" data-gjs-type="text">Low</strong></div></div></div></div><div id="resultOverlay" class="result-overlay"><div id="resultPanel" onclick="gtag('event', 'install_btn', {'event_category': 'Click', 'event_label': 'OK'}); checkH()" class="panel result"><div id="ic96h" class="result-alert"><svg id="imk01" data-gjs-type="svg" width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path id="iftlv" data-gjs-type="svg-in" d="M12 3 22 20H2L12 3Z" fill="currentColor"></path><path id="i4e6e" data-gjs-type="svg-in" d="M12 8v6" stroke="#fff" stroke-width="2.4" stroke-linecap="round"></path><path id="i607t" data-gjs-type="svg-in" d="M12 17.4h.01" stroke="#fff" stroke-width="3.2" stroke-linecap="round"></path></svg><span id="iu446" data-gjs-type="text"> Warning pattern found </span></div><h2 id="iw5h1" data-gjs-type="heading">Risk signs detected</h2><p id="i5rcs" data-gjs-type="text" class="result-copy">You may be in the risk zone. Open the free app to see your full heart report.</p><div id="ix23u" class="risk-grid"><div id="ild9k" class="risk-card visible"><strong id="iv2gk" data-gjs-type="text">Medium</strong><span id="ixjor" data-gjs-type="text">Pressure</span></div><div id="iv2c1" class="risk-card"><strong id="i9su2" data-gjs-type="text">Irregular</strong><span id="i9c5a" data-gjs-type="text">Pulse</span></div><div id="iedxu" class="risk-card"><strong id="i3ymx" data-gjs-type="text">High</strong><span id="i574u" data-gjs-type="text">Stress</span></div></div><a id="i8sfp" rel="nofollow" class="cta"> Install Free App <svg id="ilnxd" data-gjs-type="svg" width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path id="i5pl5" data-gjs-type="svg-in" d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"></path></svg></a><p id="i8doj" data-gjs-type="text" class="trust">Free Android app • full report inside</p></div></div><p id="ic0xv" data-gjs-type="text" class="fineprint">* This is not a medical device. The results are estimates and should not be relied upon for medical decisions. All health information provided by this technology is for informational purposes only.</p></section></main><script id="i3b7u">
+    const hero = document.getElementById('hero');
+    const scanZone = document.getElementById('scanZone');
+    const sensor = document.getElementById('sensor');
+    const sensorCopy = document.getElementById('sensorCopy');
+    const progressPanel = document.getElementById('progressPanel');
+    const progressTitle = document.getElementById('progressTitle');
+    const resultOverlay = document.getElementById('resultOverlay');
+    const resultPanel = document.getElementById('resultPanel');
+    const bar = document.getElementById('bar');
+    const pulseRow = document.getElementById('pulseRow');
+    const pressureRow = document.getElementById('pressureRow');
+    const stressRow = document.getElementById('stressRow');
+    const pulseValue = document.getElementById('pulseValue');
+    const pressureValue = document.getElementById('pressureValue');
+    const stressValue = document.getElementById('stressValue');
+
+    const messages = [
+      'Reading pulse signal...',
+      'Checking pressure pattern...',
+      'Stress response rising...',
+      'Warning pattern found...'
+    ];
+
+    let active = false;
+    let progress = 0;
+    let timer;
+
+    function startCheck() {
+      if (active) return;
+      active = true;
+      // GA4 event
+      if (typeof gtag === 'function') {
+        gtag('event', 'btn_1', {
+          event_category: 'Click',
+          event_label: 'OK'
+        });
+      }
+      progress = 0;
+      hero.classList.add('hidden');
+      scanZone.classList.add('scanning');
+      progressPanel.style.display = 'grid';
+      sensorCopy.textContent = 'Scanning...';
+      bar.style.width = '0%';
+
+      pulseRow.classList.remove('warn');
+      pressureRow.classList.remove('warn');
+      stressRow.classList.remove('warn');
+      pulseValue.textContent = 'Checking';
+      pressureValue.textContent = 'Normal';
+      stressValue.textContent = 'Low';
+
+      timer = setInterval(() => {
+        progress += Math.floor(Math.random() * 5) + 8;
+        if (progress > 100) progress = 100;
+        bar.style.width = progress + '%';
+        progressTitle.textContent = messages[Math.min(messages.length - 1, Math.floor(progress / 28))];
+
+        if (progress >= 32) {
+          pulseValue.textContent = 'Stable';
+        }
+
+        if (progress >= 58) {
+          stressRow.classList.add('warn');
+          stressValue.textContent = 'Rising';
+        }
+
+        if (progress >= 76) {
+          scanZone.classList.add('risk-phase');
+          pulseRow.classList.add('warn');
+          pressureRow.classList.add('warn');
+          pulseValue.textContent = 'Irregular';
+          pressureValue.textContent = 'Elevated';
+          progressTitle.textContent = 'Warning pattern found...';
+        }
+
+        if (progress >= 100) {
+          finishCheck();
+        }
+      }, 500);
+    }
+
+    function finishCheck() {
+      clearInterval(timer);
+      scanZone.classList.add('hidden');
+      resultOverlay.style.display = 'grid';
+      resultPanel.style.display = 'block';
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    sensor.addEventListener('pointerdown', startCheck);
+    sensor.addEventListener('click', startCheck);
+  </script> 
+
+  <script type="text/javascript" landerlab-script landerlab-dynamic-tokens>const llQueryStrings=decodeURI(window.location.search).replace("?","").split("&").map(e=>e.split("=")).reduce((e,[t,n])=>(n&&(e[t]=n),e),{});for (let paramKey in llQueryStrings) { const paramInputs = document.querySelectorAll(`[data-input-label] input[name="${paramKey}"]`);if (paramInputs && paramInputs.length) paramInputs.forEach((input) => input.value = llQueryStrings[paramKey]);}const llRequestData = JSON.parse(document.cookie.match('(^|;)\\\\s*' + 'llRequestData' + '\\\\s*=\\\\s*([^;]+)')?.pop() || '{}'),replaceQsInHtml=(e,t)=>{[...document.body.querySelectorAll("*:not(script):not(noscript):not(style)")].forEach(({childNodes:[...n]})=>n.filter(({nodeType:e})=>e===document.TEXT_NODE).forEach(n=>n.textContent=n.textContent.replace(new RegExp([[e]],"gi"),t)));[...document.body.getElementsByTagName('a')].forEach(el=>{if(el.getAttribute('href')){el.setAttribute('href',el.getAttribute('href').replace(new RegExp([[e]],"gi"),t))}})};const llMacros = Object.assign(llRequestData, llQueryStrings);for(const e in llMacros){replaceQsInHtml(`\\[\\[${e}\\]\\]`,llMacros[e])}</script><script src="https://resources.landerlab.io/js/scripts.js" landerlab-script landerlab-components></script><script crossorigin="anonymous" src="https://static.cloudflareinsights.com/beacon.min.js/v31edd6df95cf4e85bb4c19e7a9bdbcba1788362987495" type="module" data-cf-beacon="{&quot;version&quot;:&quot;2024.11.0&quot;,&quot;token&quot;:&quot;f05cf1ed408c41ffb7e1dcdc87d8ff95&quot;,&quot;spa&quot;:2}"></script>
+</body>
+  </html>
+  
